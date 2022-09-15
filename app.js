@@ -7,7 +7,7 @@ $(window).on("load", () => {
   });
 
   //event listener on the left button
-  $(".left-icon").click(() => {
+  $(".left-button").click(() => {
     const counterImg = $(".counter");
     counterImg.each((i, obj) => {
       const lastClone = $(obj).prev().prev().hasClass("lastClone");
@@ -28,7 +28,7 @@ $(window).on("load", () => {
   });
 
   //event listener on the right button
-  $(".right-icon").click(() => {
+  $(".right-button").click(() => {
     const counterImg = $(".counter");
     counterImg.each((i, obj) => {
       const isFirstClone = $(obj).hasClass("firstClone");
