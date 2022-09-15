@@ -1,5 +1,6 @@
 :root {
   --blue: #134880;
+  --gray: #dddddd;
 }
 
 *,
@@ -108,23 +109,35 @@ img {
   gap: 0.5em;
 }
 
-.button-container .left-icon,
-.button-container .right-icon {
-  width: 30px;
-  height: 30px;
-  padding: 1em;
-  color: var(--blue);
-  border: 2px solid var(--blue);
-  border-radius: 10px;
+button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-size: 9.98px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: all 0.3s ease;
-  font-size: 1.5rem;
 }
 
-.button-container .left-icon:active,
-.button-container .right-icon:active {
-  transform: scale(0.9);
+button:hover {
+  border-color: var(--gray);
+}
+
+.left-button {
+  background-image: url(./images/arrow-blue-left.png);
+}
+.right-button {
+  background-image: url(./images/arrow-blue-right.png);
+}
+
+.left-button:hover {
+  background-image: url(./images/arrow-gray-left.png);
+}
+.right-button:hover {
+  background-image: url(./images/arrow-gray-right.png);
 }
