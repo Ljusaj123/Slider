@@ -1,70 +1,36 @@
 "use strict";
 
 $(window).on("load", function () {
-  // $(".firstClone").each((i, obj) => {
-  //   const firstCloneSize = $(obj).width();
-  //   $(obj)
-  //     .parent()
-  //     .css("transform", "translateX(" + firstCloneSize + "px)");
-  // });
   //event listener on the left button
-  $(".left-button").click(function () {
-    var counterImg = $(".counter");
-    counterImg.each(function (i, obj) {
-      var lastClone = $(obj).prev().prev().hasClass("lastClone");
-      var firstClone = $(obj).parent().children(":nth-last-child(1)");
-      var imagesOfRow = $(obj).parent().children();
+  $(".right-button").click(function () {
+    var lastImg = $(".last");
+    var firstImg = $(".first");
+    firstImg.each(function (i, obj) {
+      firstImg.prev().addClass("first");
 
-      if (lastClone) {
-        var firstCloneWidth = firstClone.width();
-        imagesOfRow.animate({
-          left: -firstCloneWidth
-        }, 500);
-        firstClone.addClass("counter");
-      } else {
-        var counterimgWidth = $(obj).width() + 8;
-        imagesOfRow.animate({
-          left: "+=" + counterimgWidth
-        }, 500);
-        $(obj).prev().addClass("counter");
+      if (firstImg.prev().length === 0) {
+        $(obj).parent().children(":nth-last-child(1)").addClass("first");
       }
 
-      $(obj).removeClass("counter");
+      lastImg.removeClass("last");
+      firstImg.addClass("last");
+      firstImg.removeClass("first");
     });
   }); //event listener on the right button
 
-  $(".right-button").click(function () {
-    var counterImg = $(".counter");
-    counterImg.each(function (i, obj) {
-      var isFirstClone = $(obj).hasClass("firstClone");
-      var hasTopRow = $(obj).parent().hasClass("top-row");
-      var row = $(obj).parent().width();
-      var wrapper = $(obj).parent().parent().width();
-      var botRowLastCloneWidth = $(".bot-row .lastClone").width();
-      var imagesOfRow = $(obj).parent().children();
+  $(".left-button").click(function () {
+    var lastImg = $(".last");
+    var firstImg = $(".first");
+    lastImg.each(function (i, obj) {
+      lastImg.next().addClass("last");
 
-      if (isFirstClone) {
-        var width = 0;
-
-        if (hasTopRow) {
-          width = row - wrapper + 24;
-        } else {
-          width = row - wrapper - botRowLastCloneWidth + 4;
-        }
-
-        imagesOfRow.animate({
-          left: "+=" + width
-        }, 500);
-        $(obj).parent().children(":nth-child(3)").addClass("counter");
-      } else {
-        var imgWidth = $(obj).next().width() + 8;
-        imagesOfRow.animate({
-          left: "-=" + imgWidth
-        }, 500);
-        $(obj).next().addClass("counter");
+      if (lastImg.next().length === 0) {
+        $(obj).parent().children(":nth-child(1)").addClass("last");
       }
 
-      $(obj).removeClass("counter");
+      firstImg.removeClass("first");
+      lastImg.removeClass("last");
+      lastImg.addClass("first");
     });
   });
 });
