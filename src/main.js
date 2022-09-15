@@ -1,10 +1,10 @@
 $(window).on("load", () => {
-  $(".firstClone").each((i, obj) => {
-    const firstCloneSize = $(obj).width();
-    $(obj)
-      .parent()
-      .css("transform", "translateX(" + firstCloneSize + "px)");
-  });
+  // $(".firstClone").each((i, obj) => {
+  //   const firstCloneSize = $(obj).width();
+  //   $(obj)
+  //     .parent()
+  //     .css("transform", "translateX(" + firstCloneSize + "px)");
+  // });
 
   //event listener on the left button
   $(".left-button").click(() => {

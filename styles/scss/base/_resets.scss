@@ -1,11 +1,14 @@
 @use "./variables" as *;
 
+html {
+  box-sizing: border-box;
+}
 *,
-*::after,
-*::before {
+*:before,
+*:after {
+  box-sizing: inherit;
   margin: 0;
   border: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -16,35 +19,40 @@ body {
 header,
 footer {
   height: 100px;
+}
+
+header {
   display: flex;
   justify-content: space-between;
 }
 
 footer {
   background-color: $gray;
+  border-radius: 5px 5px 0px 0px;
 }
 
 main {
-  display: flex;
-  padding: 3em 0;
+  height: 530px;
+  padding: 60px 0;
 }
 
 h1 {
   color: $blue;
   font-size: 32px;
   line-height: 38px;
-  letter-spacing: -0.2px;
-  align-items: flex-end;
+  text-align: left;
+  font-weight: $fw-bold;
 }
-
 p {
+  color: $blackish;
   font-size: 18px;
   line-height: 26px;
-  letter-spacing: -0.2px;
   text-align: left;
-  color: $blackish;
-  display: flex;
-  align-items: center;
+  font-weight: $fw-normal;
+}
+h1,
+p {
+  letter-spacing: -0.2px;
 }
 
 img {
@@ -56,8 +64,6 @@ img {
 
 .container {
   max-width: 941px;
-  max-height: 730px;
-  height: 100%;
   width: 100%;
   margin: 0 auto;
 }

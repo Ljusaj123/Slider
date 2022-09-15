@@ -1,11 +1,13 @@
 "use strict";
 
 $(window).on("load", function () {
-  $(".firstClone").each(function (i, obj) {
-    var firstCloneSize = $(obj).width();
-    $(obj).parent().css("transform", "translateX(" + firstCloneSize + "px)");
-  }); //event listener on the left button
-
+  // $(".firstClone").each((i, obj) => {
+  //   const firstCloneSize = $(obj).width();
+  //   $(obj)
+  //     .parent()
+  //     .css("transform", "translateX(" + firstCloneSize + "px)");
+  // });
+  //event listener on the left button
   $(".left-button").click(function () {
     var counterImg = $(".counter");
     counterImg.each(function (i, obj) {
