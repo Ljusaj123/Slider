@@ -1,0 +1,63 @@
+@use "./variables" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  font-family: $ff-SansPro;
+}
+
+header,
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: $gray;
+}
+
+main {
+  display: flex;
+  padding: 3em 0;
+}
+
+h1 {
+  color: $blue;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.2px;
+  align-items: flex-end;
+}
+
+p {
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: $blackish;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+}
+
+.container {
+  max-width: 941px;
+  max-height: 730px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}

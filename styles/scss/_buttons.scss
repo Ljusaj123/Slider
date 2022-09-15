@@ -1,0 +1,30 @@
+@use "./base" as *;
+button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  cursor: pointer;
+  background-size: 9.98px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: $gray;
+}
+
+.left-button {
+  background-image: url(/images/arrow-blue-left.png);
+}
+.right-button {
+  background-image: url(/images/arrow-blue-right.png);
+}
+
+.left-button:hover {
+  background-image: url(/images/arrow-gray-left.png);
+}
+.right-button:hover {
+  background-image: url(/images/arrow-gray-right.png);
+}

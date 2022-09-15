@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header,
+footer {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer {
+  background-color: #dddddd;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3em 0;
+}
+
+h1 {
+  color: #134880;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.2px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+p {
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #484a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+}
+
+.container {
+  max-width: 941px;
+  max-height: 730px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #134880;
+  border-radius: 5px;
+  cursor: pointer;
+  background-size: 9.98px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: #dddddd;
+}
+
+.left-button {
+  background-image: url(/images/arrow-blue-left.png);
+}
+
+.right-button {
+  background-image: url(/images/arrow-blue-right.png);
+}
+
+.left-button:hover {
+  background-image: url(/images/arrow-gray-left.png);
+}
+
+.right-button:hover {
+  background-image: url(/images/arrow-gray-right.png);
+}
+
+.box {
+  background-color: #dddddd;
+  height: 100%;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.box1 {
+  width: 301px;
+}
+
+.box2 {
+  width: 621px;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto 0;
+}
+
+.slider {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  gap: 8px;
+}
+
+.text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.wrapper1 {
+  width: 600px;
+}
+
+.wrapper2 {
+  width: 500px;
+}
+
+.row {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5em;
+}

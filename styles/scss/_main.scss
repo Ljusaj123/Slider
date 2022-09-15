@@ -1,0 +1,67 @@
+@use "./base/" as *;
+.box {
+  background-color: $gray;
+  height: 100%;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.box1 {
+  width: 301px;
+}
+.box2 {
+  width: 621px;
+}
+
+.main-container {
+  display: flex;
+  margin: auto 0;
+}
+.slider {
+  flex: 2;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  gap: 8px;
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.wrapper1 {
+  width: 600px;
+}
+
+.wrapper2 {
+  width: 500px;
+}
+
+.row {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
