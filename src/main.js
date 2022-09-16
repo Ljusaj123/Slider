@@ -19,11 +19,11 @@ $(window).on("load", () => {
       siblings.animate({ left: `+=${firstImgWidth}` });
       $(obj).animate({ left: `+=${firstImgWidth}`, opacity: 0 });
       $(obj).animate({ left: `-=${shift}` }, () => {
-        $(obj).removeClass("first");
-        $(obj).parent().children(".last").removeClass("last");
-        $(obj).addClass("last");
         $(obj).css("opacity", "1");
       });
+      $(obj).removeClass("first");
+      $(obj).parent().children(".last").removeClass("last");
+      $(obj).addClass("last");
     });
   });
 
@@ -47,11 +47,10 @@ $(window).on("load", () => {
       $(obj).css("opacity", "0");
       siblings.animate({ left: `-=${lastImgWidth}` });
       $(obj).animate({ left: `+=${shift}` });
-      $(obj).animate({ opacity: 1 }, 200, () => {
-        $(obj).removeClass("last");
-        $(obj).parent().children(".first").removeClass("first");
-        $(obj).addClass("first");
-      });
+      $(obj).animate({ opacity: 1 }, 200);
+      $(obj).removeClass("last");
+      $(obj).parent().children(".first").removeClass("first");
+      $(obj).addClass("first");
     });
   });
 });

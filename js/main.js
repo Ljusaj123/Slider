@@ -26,11 +26,11 @@ $(window).on("load", function () {
       $(obj).animate({
         left: "-=" + shift
       }, function () {
-        $(obj).removeClass("first");
-        $(obj).parent().children(".last").removeClass("last");
-        $(obj).addClass("last");
         $(obj).css("opacity", "1");
       });
+      $(obj).removeClass("first");
+      $(obj).parent().children(".last").removeClass("last");
+      $(obj).addClass("last");
     });
   }); //event listener on the right button
 
@@ -57,11 +57,10 @@ $(window).on("load", function () {
       });
       $(obj).animate({
         opacity: 1
-      }, 200, function () {
-        $(obj).removeClass("last");
-        $(obj).parent().children(".first").removeClass("first");
-        $(obj).addClass("first");
-      });
+      }, 200);
+      $(obj).removeClass("last");
+      $(obj).parent().children(".first").removeClass("first");
+      $(obj).addClass("first");
     });
   });
 });
