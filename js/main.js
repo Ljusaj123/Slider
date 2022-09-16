@@ -3,34 +3,56 @@
 $(window).on("load", function () {
   //event listener on the left button
   $(".right-button").click(function () {
-    var lastImg = $(".last");
     var firstImg = $(".first");
     firstImg.each(function (i, obj) {
-      firstImg.prev().addClass("first");
-
-      if (firstImg.prev().length === 0) {
+      if ($(obj).prev().length === 0) {
         $(obj).parent().children(":nth-last-child(1)").addClass("first");
+      } else {
+        $(obj).prev().addClass("first");
       }
 
-      lastImg.removeClass("last");
-      firstImg.addClass("last");
-      firstImg.removeClass("first");
+      var firstImgWidth = $(obj).width() + 10;
+      var rowImgWidth = $(obj).parent().width();
+      var shift = rowImgWidth + 10 - firstImgWidth;
+      var siblings = $(obj).siblings();
+      siblings.animate({
+        left: "+=" + firstImgWidth
+      });
+      $(obj).animate({
+        left: "-=" + shift
+      }, function () {
+        $(obj).removeClass("first");
+        $(obj).parent().children(".last").removeClass("last");
+        $(obj).addClass("last");
+      });
     });
   }); //event listener on the right button
 
   $(".left-button").click(function () {
     var lastImg = $(".last");
-    var firstImg = $(".first");
     lastImg.each(function (i, obj) {
-      lastImg.next().addClass("last");
+      console.log($(obj).next());
 
-      if (lastImg.next().length === 0) {
+      if ($(obj).next().length === 0) {
         $(obj).parent().children(":nth-child(1)").addClass("last");
+      } else {
+        $(obj).next().addClass("last");
       }
 
-      firstImg.removeClass("first");
-      lastImg.removeClass("last");
-      lastImg.addClass("first");
+      var lastImgWidth = $(obj).width() + 10;
+      var rowImgWidth = $(obj).parent().width();
+      var shift = rowImgWidth + 10 - lastImgWidth;
+      var siblings = $(obj).siblings();
+      siblings.animate({
+        left: "-=" + lastImgWidth
+      });
+      $(obj).animate({
+        left: "+=" + shift
+      }, function () {
+        $(obj).removeClass("last");
+        $(obj).parent().children(".first").removeClass("first");
+        $(obj).addClass("first");
+      });
     });
   });
 });
