@@ -4,6 +4,9 @@ $(window).on("load", () => {
     const firstImg = $(".first");
 
     firstImg.each((i, obj) => {
+      const siblings = $(obj).siblings();
+      const rowImgWidth = $(obj).parent().width();
+
       if ($(obj).prev().length === 0) {
         $(obj).parent().children(":nth-last-child(1)").addClass("first");
       } else {
@@ -11,15 +14,15 @@ $(window).on("load", () => {
       }
 
       const firstImgWidth = $(obj).width() + 10;
-      const rowImgWidth = $(obj).parent().width();
-      let shift = rowImgWidth + 10 - firstImgWidth;
-      const siblings = $(obj).siblings();
+      let shift = rowImgWidth + 10;
 
       siblings.animate({ left: `+=${firstImgWidth}` });
+      $(obj).animate({ left: `+=${firstImgWidth}`, opacity: 0 });
       $(obj).animate({ left: `-=${shift}` }, () => {
         $(obj).removeClass("first");
         $(obj).parent().children(".last").removeClass("last");
         $(obj).addClass("last");
+        $(obj).css("opacity", "1");
       });
     });
   });
@@ -29,7 +32,9 @@ $(window).on("load", () => {
     const lastImg = $(".last");
 
     lastImg.each((i, obj) => {
-      console.log($(obj).next());
+      const siblings = $(obj).siblings();
+      const rowImgWidth = $(obj).parent().width();
+
       if ($(obj).next().length === 0) {
         $(obj).parent().children(":nth-child(1)").addClass("last");
       } else {
@@ -37,11 +42,12 @@ $(window).on("load", () => {
       }
 
       const lastImgWidth = $(obj).width() + 10;
-      const rowImgWidth = $(obj).parent().width();
       let shift = rowImgWidth + 10 - lastImgWidth;
-      const siblings = $(obj).siblings();
+
+      $(obj).css("opacity", "0");
       siblings.animate({ left: `-=${lastImgWidth}` });
-      $(obj).animate({ left: `+=${shift}` }, () => {
+      $(obj).animate({ left: `+=${shift}` });
+      $(obj).animate({ opacity: 1 }, 200, () => {
         $(obj).removeClass("last");
         $(obj).parent().children(".first").removeClass("first");
         $(obj).addClass("first");
