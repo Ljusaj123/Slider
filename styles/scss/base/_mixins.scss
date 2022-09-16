@@ -1,5 +1,15 @@
-@mixin flex-display($justify-content, $align-items) {
+@mixin flex-display($justify-content, $align-items, $direction) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
+  flex-direction: $direction;
+}
+
+@mixin text($font-size, $color, $weight, $line-height) {
+  font-size: $font-size;
+  color: $color;
+  line-height: $line-height;
+  font-weight: $weight;
+  text-align: left;
+  letter-spacing: -0.2px;
 }
