@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 html {
   box-sizing: border-box;
@@ -22,8 +23,7 @@ footer {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  @include flex-display(space-between, initial, initial);
 }
 
 footer {
@@ -37,22 +37,10 @@ main {
 }
 
 h1 {
-  color: $blue;
-  font-size: 32px;
-  line-height: 38px;
-  text-align: left;
-  font-weight: $fw-bold;
+  @include text(32px, $blue, $fw-bold, 38px);
 }
 p {
-  color: $blackish;
-  font-size: 18px;
-  line-height: 26px;
-  text-align: left;
-  font-weight: $fw-normal;
-}
-h1,
-p {
-  letter-spacing: -0.2px;
+  @include text(18px, $blackish, $fw-normal, 26px);
 }
 
 img {
